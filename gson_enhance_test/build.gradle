@@ -1,0 +1,19 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    // Required -- JUnit 4 framework
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'com.google.truth:truth:1.1.3'
+    testImplementation 'com.google.code.gson:gson:2.10.1'
+    testImplementation project(':gson_enhance_annotation')
+    testAnnotationProcessor project(':gson_enhance_processor')
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
